@@ -9,7 +9,7 @@ const transformObjectByKeys = (object, keys) => {
   }, {});
 };
 
-export const useGetShowList = async () => {
+export const useFetchAllShows = async () => {
   const allShows = await $fetch("https://api.tvmaze.com/shows");
   return allShows.map((show) => transformObjectByKeys(show, desiredKeys));
 };

@@ -5,13 +5,16 @@
 </template>
 
 <script setup>
-import { useGetShowList } from "@/composables/useGetAllShows.js";
+import { useFetchAllShows } from "@/composables/useFetchAllShows.js";
 import { useGroupByGenre } from "@/composables/useGroupByGenre.js";
+import { useSortByRating } from "@/composables/useSortByRating.js";
 
 onMounted(async () => {
-  const shows = await useGetShowList();
-  const showsByGenre = await useGroupByGenre(shows);
+  const shows = await useFetchAllShows();
+  const showsSortedByGenre = await useGroupByGenre(shows);
+  const showsSortedByRating = useSortByRating(shows);
   console.log(shows);
-  console.log(showsByGenre);
+  console.log(showsSortedByGenre);
+  console.log(showsSortedByRating);
 });
 </script>
