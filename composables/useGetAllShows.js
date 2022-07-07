@@ -1,13 +1,4 @@
-const requiredProperties = [
-  "name",
-  "summary",
-  "image",
-  "genres",
-  "seasons",
-  "episodes",
-  "created_at",
-  "updated_at",
-];
+const desiredKeys = ["name", "summary", "image", "genres", "rating"];
 
 const transformObjectByKeys = (object, keys) => {
   return keys.reduce((obj, key) => {
@@ -20,7 +11,5 @@ const transformObjectByKeys = (object, keys) => {
 
 export const useGetShowList = async () => {
   const allShows = await $fetch("https://api.tvmaze.com/shows");
-  return allShows.map((show) =>
-    transformObjectByKeys(show, requiredProperties)
-  );
+  return allShows.map((show) => transformObjectByKeys(show, desiredKeys));
 };
