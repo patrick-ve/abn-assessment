@@ -1,7 +1,11 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div class="relative">
+    <div class="w-screen h-full min-h-screen bg-[#ccd5ae] z-20">
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </div>
+  </div>
 </template>
 
 <script setup>
