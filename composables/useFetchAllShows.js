@@ -1,4 +1,4 @@
-const desiredKeys = ["name", "summary", "image", "genres", "rating"];
+const desiredKeys = ["name", "summary", "image", "genres", "rating", "id"];
 
 const transformObjectByKeys = (object, keys) => {
   return keys.reduce((obj, key) => {

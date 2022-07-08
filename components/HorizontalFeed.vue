@@ -45,7 +45,7 @@ import { useSortByRating } from "@/composables/useSortByRating.js";
 const shows = await useFetchAllShows();
 const showsSortedByGenre = await useGroupByGenre(shows);
 const showsSortedByRating = useSortByRating(shows);
-console.log(shows);
-console.log(showsSortedByGenre);
-console.log(showsSortedByRating);
+// console.log(shows);
+// console.log(showsSortedByGenre);
+// console.log(showsSortedByRating);
 </script>

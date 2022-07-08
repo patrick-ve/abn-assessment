@@ -8,16 +8,13 @@
         :key="show.id"
         class="relative overflow-hidden shadow-lg rounded-2xl shrink-0 snap-center w-72 h-96"
       >
-        <img
-          :src="show.image.original"
-          :alt="show.name"
-          class="object-cover w-full h-full rounded"
-        />
-        <button
-          class="absolute px-4 py-2 text-white rounded shadow semibold inset-x-2 bottom-2 bg-primary shadow-primary"
-        >
-          Read the review of {{ show.name }}
-        </button>
+        <NuxtLink :to="`/shows/${show.id}`">
+          <img
+            :src="show.image.original"
+            :alt="`TV show image of ${show.name}`"
+            class="object-cover w-full h-full rounded"
+          />
+        </NuxtLink>
       </li>
     </ul>
   </section>
