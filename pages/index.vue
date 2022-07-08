@@ -1,5 +1,9 @@
 <template>
-  <Carousel v-for="show in showsSortedByGenre" :key="show.id" :show="show" />
+  <Carousel
+    v-for="(showsByGenre, index) in showsSortedByGenre"
+    :key="`show-${index}`"
+    :showsByGenre="showsByGenre"
+  />
 </template>
 
 <script setup>
