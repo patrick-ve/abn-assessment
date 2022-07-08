@@ -4,7 +4,11 @@
     <ul
       class="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0"
     >
-      <Card v-for="show in showsByGenre.shows" :key="show.id" />
+      <Card
+        v-for="(show, index) in showsByGenre.shows"
+        :key="`${index}`"
+        :show="show"
+      />
     </ul>
   </section>
 </template>
