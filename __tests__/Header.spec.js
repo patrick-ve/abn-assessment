@@ -1,22 +1,12 @@
 import { describe, it, expect, test } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 
 import Header from "../components/Header.vue";
 
 describe("Header.vue", () => {
-  test("renders app name when component is created", () => {
-    // render the component
-    const wrapper = shallowMount(Header, {
-      propsData: {
-        appName: "AmroFlix",
-        profileImageUrl: "https://picsum.photos/200/300",
-      },
-    });
+  it("should render an h1 tag", () => {
+    const wrapper = mount(Header);
 
-    // check the name of the component
-    expect(wrapper.vm.$options.name).toMatch("Header");
-
-    // check that the title is rendered
-    expect(wrapper.text()).toMatch("AmroFlix");
+    expect(wrapper.find("h1").exists()).toBeTruthy();
   });
 });

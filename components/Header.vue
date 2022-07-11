@@ -9,9 +9,7 @@
       <!-- <NuxtLink to="/about" class="text-2xl font-bold text-white">
         About
       </NuxtLink> -->
-      <span class="text-2xl font-bold text-white">
-        {{ appName }}
-      </span>
+      <h1 class="text-2xl font-bold text-white">AmroFlix</h1>
     </div>
   </header>
 </template>
@@ -21,10 +19,6 @@ import { defineProps } from "vue";
 
 defineProps({
   profileImageUrl: {
-    type: String,
-    required: true,
-  },
-  appName: {
     type: String,
     required: true,
   },
