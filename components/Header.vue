@@ -6,9 +6,12 @@
       </NuxtLink>
     </div>
     <div class="flex items-center">
-      <NuxtLink to="/about" class="text-2xl font-bold text-white">
+      <!-- <NuxtLink to="/about" class="text-2xl font-bold text-white">
         About
-      </NuxtLink>
+      </NuxtLink> -->
+      <span class="text-2xl font-bold text-white">
+        {{ appName }}
+      </span>
     </div>
   </header>
 </template>
@@ -18,6 +21,10 @@ import { defineProps } from "vue";
 
 defineProps({
   profileImageUrl: {
+    type: String,
+    required: true,
+  },
+  appName: {
     type: String,
     required: true,
   },
