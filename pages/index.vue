@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import { useFetchAllShows } from "@/composables/useFetchAllShows.js";
-import { useGroupByGenre } from "@/composables/useGroupByGenre.js";
-import { useSortByRating } from "@/composables/useSortByRating.js";
+import { useFetchAllShows } from '@/composables/useFetchAllShows.js';
+import { useGroupByGenre } from '@/composables/useGroupByGenre.js';
+import { useSortByRating } from '@/composables/useSortByRating.js';
 
 const shows = await useFetchAllShows();
 const showsSortedByGenre = await useGroupByGenre(shows);
