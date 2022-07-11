@@ -4,10 +4,14 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "test:unit": "vitest --environment jsdom"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.1.3",
-    "nuxt": "3.0.0-rc.4"
+    "@testing-library/vue": "^6.6.0",
+    "jsdom": "^20.0.0",
+    "nuxt": "3.0.0-rc.4",
+    "vitest": "^0.18.0"
   }
 }

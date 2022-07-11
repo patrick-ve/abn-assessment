@@ -40,3 +40,13 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+## Rationale
+
+Vitest’s approach to the testing space is similar to Vite’s approach on the bundling space: let the tool control your entire environment, top to bottom. Vitest is a replacement for a suite of tools:
+
+- Jest, Mocha, or Chai for test utilities
+- Babel for transpiling ESM, TypeScript, and more
+- webpack or Rollup for bundling test dependencies (if needed)
+
+This means far less config, dependency mismatching, and performance monitoring for you to manage. Just install vitest and let the magic happen. ✨
