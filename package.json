@@ -5,11 +5,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "test": "vitest --environment jsdom",
     "test:unit": "vitest --run --reporter verbose --globals",
     "test:watch": "vitest --reporter verbose --globals"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.1.3",
+    "@testing-library/vue": "^6.6.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/test-utils": "^2.0.2",
     "jsdom": "^20.0.0",
