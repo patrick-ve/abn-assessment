@@ -42,7 +42,7 @@
 /*
   Imports
 */
-import { ref, watch } from 'vue';
+import { ref, watch, defineEmits } from 'vue';
 import { useDebouncedRef } from '@/composables/useDebouncedRef';
 
 /*
@@ -54,11 +54,13 @@ const tvShowQuery = useDebouncedRef('', 400);
   Watchers
 */
 watch(tvShowQuery, async (newQuery) => {
-  const result = await $fetch(
-    `https://api.tvmaze.com/search/shows?q=${newQuery}`
-  );
-  console.log(result);
+  await submitFormHandler(newQuery);
 });
+
+/*
+  Emits
+*/
+const emit = defineEmits(['apiCallComplete']);
 
 /*
   Form handlers
@@ -67,12 +69,14 @@ const emptyFormHandler = () => {
   tvShowQuery.value = '';
 };
 
-const submitFormHandler = () => {
-  router.push({
-    name: 'shows',
-    query: {
-      search: tvShowQuery.value,
-    },
-  });
+const submitFormHandler = async (query) => {
+  const result = await $fetch(`https://api.tvmaze.com/search/shows?q=${query}`);
+  emit('apiCallComplete', result);
+  // router.push({
+  //   name: 'shows',
+  //   query: {
+  //     search: tvShowQuery.value,
+  //   },
+  // });
 };
 </script>
