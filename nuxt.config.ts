@@ -5,6 +5,6 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
 
   components: {
-    dirs: ['~/components', '~/components/icons'],
+    dirs: ['~/components'],
   },
 });
