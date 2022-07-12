@@ -12,7 +12,7 @@ const debounce = (fn, delay = 0, immediate = false) => {
   };
 };
 
-const useDebouncedRef = (initialValue, delay, immediate) => {
+export const useDebouncedRef = (initialValue, delay, immediate) => {
   const state = ref(initialValue);
   const debouncedRef = customRef((track, trigger) => ({
     get() {
@@ -30,5 +30,3 @@ const useDebouncedRef = (initialValue, delay, immediate) => {
   }));
   return debouncedRef;
 };
-
-export default useDebouncedRef;
