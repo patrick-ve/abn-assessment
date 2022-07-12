@@ -1,12 +1,15 @@
 import { describe, expect, test } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, RouterLinkStub, shallowMount } from '@vue/test-utils';
 
 import Header from '../../components/Header.vue';
 
 const mountHeader = (args = {}) =>
-  mount(Header, {
+  shallowMount(Header, {
     props: {
       profileImageUrl: 'https://www.abnamro.com/image.jpeg',
+    },
+    stubs: {
+      NuxtLink: true,
     },
     ...args,
   });
