@@ -1,21 +1,10 @@
 <template>
-  <header class="container flex items-center justify-between h-16 px-4 mx-auto">
-    <div class="flex items-center">
-      <NuxtLink to="/" class="text-2xl font-bold text-white">
-        <img :src="profileImageUrl" alt="logo" class="w-8 h-8 rounded-full" />
-      </NuxtLink>
-    </div>
-    <div class="flex items-center">
-      <h3 class="text-2xl font-bold text-white">AmroFlix</h3>
-    </div>
+  <header
+    class="w-screen h-20 bg-red-500 flex justify-between items-center p-4"
+  >
+    <span>Home</span>
+    <Logo />
+    <span>Search</span>
   </header>
 </template>
-
-<script setup>
-defineProps({
-  profileImageUrl: {
-    type: String,
-    required: true,
-  },
-});
-</script>
+>
