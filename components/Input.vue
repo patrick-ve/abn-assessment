@@ -1,5 +1,5 @@
 <template>
-  <form class="p-4" @submit.prevent="submitFormHandler">
+  <form class="p-4" @submit.prevent>
     <label
       for="search"
       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -39,10 +39,30 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+/*
+  Imports
+*/
+import { ref, watch } from 'vue';
+import useDebouncedRef from '@/composables/useDebouncedRef';
 
-const tvShowQuery = ref('');
+/*
+  Refs
+*/
+const tvShowQuery = useDebouncedRef('', 400);
 
+/*
+  Watchers
+*/
+watch(tvShowQuery, async (newQuery) => {
+  const result = await $fetch(
+    `https://api.tvmaze.com/search/shows?q=${newQuery}`
+  );
+  console.log(result);
+});
+
+/*
+  Form handlers
+*/
 const emptyFormHandler = () => {
   tvShowQuery.value = '';
 };
