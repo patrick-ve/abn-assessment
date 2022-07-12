@@ -7,4 +7,3 @@
     <IconSearch />
   </header>
 </template>
->
