@@ -1,6 +1,6 @@
 <template>
   <li
-    class="relative overflow-hidden shadow-lg rounded-2xl shrink-0 snap-center w-72 h-96"
+    class="relative overflow-hidden shadow-lg rounded-xl shrink-0 snap-center w-72 h-96"
   >
     <NuxtLink :to="`/shows/${show.id}`">
       <img

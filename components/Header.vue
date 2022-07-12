@@ -1,10 +1,8 @@
 <template>
-  <header
-    class="w-screen h-20 bg-red-500 flex justify-between items-center p-4"
-  >
-    <span>Home</span>
+  <header class="w-screen h-20 flex justify-between items-center p-4">
+    <NavbarProfileImage />
     <Logo />
-    <span>Search</span>
+    <IconSearch />
   </header>
 </template>
 >
