@@ -4,7 +4,7 @@
     <ul
       class="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0 container-snap"
     >
-      <Card
+      <ShowCard
         v-for="(show, index) in shows"
         :key="`${show.id}-${index}`"
         :show="show"

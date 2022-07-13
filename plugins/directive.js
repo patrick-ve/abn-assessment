@@ -1,6 +1,8 @@
+import { onMounted } from 'vue';
+
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('autofocus', {
-    mounted(el) {
+    onMounted(el) {
       el.focus();
     },
   });

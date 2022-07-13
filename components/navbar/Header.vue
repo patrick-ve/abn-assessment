@@ -4,14 +4,14 @@
   >
     <div>
       <transition name="fade" mode="out-in">
-        <NavbarProfileImage v-if="$route.path === '/'" />
+        <NavBarProfileImage v-if="$route.path === '/'" />
         <nuxt-link to="/" v-else>
           <IconPrevious />
         </nuxt-link>
       </transition>
     </div>
     <nuxt-link to="/">
-      <Logo />
+      <NavBarLogo />
     </nuxt-link>
     <div class="w-6 h-6">
       <transition name="fade" mode="out-in">

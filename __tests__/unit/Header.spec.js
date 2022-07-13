@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import { mount, RouterLinkStub, shallowMount } from '@vue/test-utils';
 
-import Header from '../../components/Header.vue';
+import Header from '../../components/navbar/Header.vue';
 
 const mountHeader = (args = {}) =>
   shallowMount(Header, {

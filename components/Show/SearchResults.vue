@@ -5,7 +5,7 @@
     </h2>
     <ul class="grid grid-cols-2 gap-4 p-4 pt-0">
       <!-- TODO: Make card height and width dynamic -->
-      <Card
+      <ShowCard
         v-for="item in showsFetchedFromApi"
         :key="item.show.id"
         :show="item.show"
