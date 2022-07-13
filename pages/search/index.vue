@@ -1,6 +1,6 @@
 <template>
   <section class="pt-16">
-    <Input
+    <ShowSearchInput
       @apiCallComplete="showSearchResults"
       @searchQueryEmptied="emptySearchResults"
       v-autofocus
@@ -24,6 +24,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import ShowSearchInput from '~~/components/Search/ShowSearchInput.vue';
 
 const apiCallCompleted = ref(false);
 const showsFetchedFromApi = ref([]);
