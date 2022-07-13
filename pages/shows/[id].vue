@@ -8,7 +8,7 @@
       />
     </div>
     <button
-      class="absolute w-24 h-24 top-[67.5vh] left-[37.5%] text-red-500 bg-white rounded-full shadow-2xl"
+      class="absolute w-24 h-24 top-[67.5vh] left-[37.5%] text-[red] bg-white rounded-full shadow-2xl"
     >
       <IconPlay />
     </button>
@@ -18,10 +18,10 @@
         <IconShare />
       </span>
     </div>
-    <h1 class="px-4 text-2xl font-bold text-center uppercase">
+    <h1 class="px-4 mb-2 text-2xl font-bold text-center uppercase">
       {{ show.name }}
     </h1>
-    <div class="block mx-auto text-center text-gray-500 flew-row">
+    <div class="block mx-auto mb-2 text-center text-gray-500 flew-row">
       <span
         v-for="(genre, index) in show.genres"
         :key="`genre-${index}-${show.name}`"
@@ -29,7 +29,9 @@
         <span>{{ genreFormattedWithComma(index) }} </span>
       </span>
     </div>
-    <!-- <span>RATING</span> -->
+    <div class="px-4 mx-auto text-3xl font-bold text-center">
+      <span>{{ rating }}</span> <span class="text-lg text-[red]">/ 10</span>
+    </div>
     <ul class="flex justify-between px-16 py-2">
       <li
         v-for="(property, index) in properties"
@@ -70,5 +72,14 @@ const genreFormattedWithComma = (index) => {
   } else {
     return show.value.genres[index];
   }
+};
+
+const rating = show.value.rating.average;
+
+const starStyling = {
+  fullStarColor: 'red',
+  emptyStarColor: '#000',
+  starWidth: 30,
+  starHeight: 30,
 };
 </script>
