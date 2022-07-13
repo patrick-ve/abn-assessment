@@ -1,9 +1,11 @@
 <template>
-  <Carousel
-    v-for="(showsByGenre, index) in showsSortedByGenre"
-    :key="`show-${index}`"
-    :showsByGenre="showsByGenre"
-  />
+  <section class="mt-16">
+    <Carousel
+      v-for="(showsByGenre, index) in showsSortedByGenre"
+      :key="`show-${index}`"
+      :showsByGenre="showsByGenre"
+    />
+  </section>
 </template>
 
 <script setup>

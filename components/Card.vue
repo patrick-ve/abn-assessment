@@ -4,7 +4,7 @@
   >
     <NuxtLink :to="`/shows/${show.id}`">
       <IconUnavailable
-        v-if="show.image === null"
+        v-if="!show.image"
         class="object-cover w-full h-full rounded"
       />
       <img
