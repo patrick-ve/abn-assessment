@@ -9,7 +9,7 @@
       />
       <img
         v-else
-        :src="show.image.original"
+        :src="show.image.medium"
         :alt="`TV show image of ${show.name}`"
         class="object-cover w-full h-full rounded"
       />
