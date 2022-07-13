@@ -1,8 +1,8 @@
 <template>
   <section>
-    <h2 class="px-4 mb-2 text-lg font-semibold">{{ genre }}</h2>
+    <h2 class="px-4 mb-2 text-lg font-bold">{{ genre }}</h2>
     <ul
-      class="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0 container-snap"
+      class="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto lg:overflow-visible pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0 container-snap"
     >
       <ShowCard
         v-for="(show, index) in shows"

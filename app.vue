@@ -1,6 +1,8 @@
 <template>
   <div class="relative">
-    <div class="relative z-20 w-screen h-full min-h-screen bg-white">
+    <div
+      class="relative z-20 w-screen h-full min-h-screen bg-white md:px-32 lg:px-36"
+    >
       <NavBarHeader />
       <NuxtLayout>
         <NuxtPage />

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed top-0 left-0 z-30 flex items-center justify-between w-screen h-16 p-4 backdrop-blur-sm bg-white/30"
+    class="fixed top-0 left-0 z-30 flex items-center justify-between w-screen h-16 p-4 backdrop-blur-sm bg-white/30 md:px-32 lg:px-40"
   >
     <div>
       <transition name="fade" mode="out-in">
