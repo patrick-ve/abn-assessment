@@ -18,7 +18,6 @@
         placeholder="Search TV shows"
         required
         v-model="tvShowQuery"
-        v-autofocus
       />
       <button
         v-if="!tvShowQuery"

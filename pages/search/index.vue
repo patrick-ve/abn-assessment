@@ -3,6 +3,7 @@
     <Input
       @apiCallComplete="showSearchResults"
       @searchQueryEmptied="emptySearchResults"
+      v-autofocus
     />
     <div v-if="apiCallCompleted && showsFetchedFromApi.length > 0">
       <h2 class="pl-4 mb-2 font-extrabold">

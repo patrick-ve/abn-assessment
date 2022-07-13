@@ -25,6 +25,7 @@ const props = defineProps({
 </script>
 
 <style scoped>
+/* TODO: Make scrollbar visible on desktop */
 /* Hide scrollbar for Chrome, Safari and Opera */
 .container-snap::-webkit-scrollbar {
   display: none;
