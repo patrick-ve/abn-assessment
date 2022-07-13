@@ -5,7 +5,9 @@
       @searchQueryEmptied="emptySearchResults"
     />
     <div v-if="apiCallCompleted && showsFetchedFromApi.length > 0">
-      <h2 class="pl-4 mb-2 font-extrabold">Results</h2>
+      <h2 class="pl-4 mb-2 font-extrabold">
+        Results ({{ showsFetchedFromApi.length }})
+      </h2>
       <ul class="grid grid-cols-2 gap-4 p-4 pt-0">
         <!-- TODO: Make card height and width dynamic -->
         <Card

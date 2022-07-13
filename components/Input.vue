@@ -50,6 +50,7 @@ import { useDebouncedRef } from '@/composables/useDebouncedRef';
   Refs
 */
 const tvShowQuery = useDebouncedRef('', 400);
+const shows = ref([]);
 
 /*
   Watchers
@@ -75,22 +76,16 @@ const emptyFormHandler = () => {
 };
 
 const submitFormHandler = async (query) => {
-  try {
-    const result = await $fetch(
-      `https://api.tvmaze.com/search/shows?q=${query}`
-    );
-    result.forEach((item, index) =>
-      console.log(item.show.image, index, result.length)
-    );
-    emit('apiCallComplete', result);
-    // router.push({
-    //   name: 'shows',
-    //   query: {
-    //     search: tvShowQuery.value,
-    //   },
-    // });
-  } catch (err) {
-    console.error(err);
-  }
+  const { data, pending, error, refresh } = await useFetch(
+    `https://api.tvmaze.com/search/shows?q=${query}`
+  );
+  console.log(data.value, pending, error);
+  emit('apiCallComplete', data.value);
+  // router.push({
+  //   name: 'shows',
+  //   query: {
+  //     search: tvShowQuery.value,
+  //   },
+  // });
 };
 </script>

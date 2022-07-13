@@ -1,9 +1,14 @@
 <template>
   <li
-    class="relative overflow-hidden rounded-xl shrink-0 snap-center w-32 h-48 shadow-black shadow-lg"
+    class="relative w-32 h-48 overflow-hidden shadow-lg rounded-xl shrink-0 snap-center shadow-black"
   >
     <NuxtLink :to="`/shows/${show.id}`">
+      <IconUnavailable
+        v-if="show.image === null"
+        class="object-cover w-full h-full rounded"
+      />
       <img
+        v-else
         :src="show.image.original"
         :alt="`TV show image of ${show.name}`"
         class="object-cover w-full h-full rounded"
