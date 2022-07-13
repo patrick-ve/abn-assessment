@@ -2,7 +2,7 @@
   <section>
     <h2 class="px-4 mb-2 text-lg font-bold">{{ genre }}</h2>
     <ul
-      class="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto lg:overflow-visible pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0 container-snap"
+      class="flex w-full snap-x snap-mandatory gap-4 overflow-x-scroll pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0"
     >
       <ShowCard
         v-for="(show, index) in shows"
@@ -27,15 +27,27 @@ const props = defineProps({
 </script>
 
 <style scoped>
-/* TODO: Make scrollbar visible on desktop */
-/* Hide scrollbar for Chrome, Safari and Opera */
-.container-snap::-webkit-scrollbar {
-  display: none;
+ul {
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
+}
+ul::-webkit-scrollbar {
+  height: 1rem;
+  cursor: grab;
+}
+ul::-webkit-scrollbar-track {
+  background: none;
+}
+ul::-webkit-scrollbar-thumb {
+  border: 5px solid transparent;
+  border-radius: 999px;
+  background-color: red;
+  background-clip: content-box;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.container-snap {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+@media (max-width: 376px) {
+  ul::-webkit-scrollbar {
+    height: 0;
+  }
 }
 </style>
