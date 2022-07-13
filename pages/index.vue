@@ -2,9 +2,11 @@
   <section class="mt-16">
     <Carousel
       v-for="(showsByGenre, index) in showsSortedByGenre"
-      :key="`show-${index}`"
-      :showsByGenre="showsByGenre"
+      :key="`show-carousel-${index}`"
+      :shows="showsByGenre.shows"
+      :genre="showsByGenre.genre"
     />
+    <Carousel :shows="showsSortedByRating" :genre="'Best Rated'" />
   </section>
 </template>
 

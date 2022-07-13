@@ -1,12 +1,12 @@
 <template>
   <section>
-    <h2 class="px-4 mb-2 text-lg font-semibold">{{ showsByGenre.genre }}</h2>
+    <h2 class="px-4 mb-2 text-lg font-semibold">{{ genre }}</h2>
     <ul
       class="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto pb-6 before:w-[30vw] after:w-[30vw] after:shrink-0 container-snap"
     >
       <Card
-        v-for="(show, index) in showsByGenre.shows"
-        :key="`${index}`"
+        v-for="(show, index) in shows"
+        :key="`${show.id}-${index}`"
         :show="show"
       />
     </ul>
@@ -14,11 +14,13 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
-
 const props = defineProps({
-  showsByGenre: {
+  shows: {
     type: Object,
+    required: true,
+  },
+  genre: {
+    type: String,
     required: true,
   },
 });
