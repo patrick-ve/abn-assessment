@@ -54,13 +54,17 @@ const tvShowQuery = useDebouncedRef('', 400);
   Watchers
 */
 watch(tvShowQuery, async (newQuery) => {
+  if (tvShowQuery.value === '') {
+    emit('searchQueryEmptied');
+  }
+
   await submitFormHandler(newQuery);
 });
 
 /*
   Emits
 */
-const emit = defineEmits(['apiCallComplete']);
+const emit = defineEmits(['apiCallComplete', 'searchQueryEmptied']);
 
 /*
   Form handlers
