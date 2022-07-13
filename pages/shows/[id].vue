@@ -78,11 +78,4 @@ const genreFormattedWithComma = (index) => {
 };
 
 const rating = show.value.rating.average;
-
-const starStyling = {
-  fullStarColor: 'red',
-  emptyStarColor: '#000',
-  starWidth: 30,
-  starHeight: 30,
-};
 </script>
