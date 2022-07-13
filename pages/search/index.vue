@@ -3,7 +3,6 @@
     <ShowSearchInput
       @searchQueryProvided="fetchShows"
       @searchQueryEmptied="emptySearchResults"
-      v-autofocus
     />
     <ShowSearchResults
       :apiCallCompleted="apiCallCompleted"
