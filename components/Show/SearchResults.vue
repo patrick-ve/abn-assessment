@@ -3,8 +3,7 @@
     <h2 class="pl-4 mb-2 font-extrabold">
       Results ({{ showsFetchedFromApi.length }})
     </h2>
-    <ul class="grid grid-cols-2 gap-4 p-4 pt-0">
-      <!-- TODO: Make card height and width dynamic -->
+    <ul class="grid grid-cols-2 gap-4 p-4 pt-0 md:grid-cols-4 lg:gap-8">
       <ShowCard
         v-for="item in showsFetchedFromApi"
         :key="item.show.id"

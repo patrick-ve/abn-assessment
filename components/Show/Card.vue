@@ -1,12 +1,15 @@
 <template>
   <li
-    class="relative w-32 h-48 overflow-hidden shadow-lg rounded-xl shrink-0 snap-center shadow-black"
+    class="relative w-full h-full overflow-hidden shadow-lg rounded-xl shrink-0 snap-center shadow-black"
   >
     <NuxtLink :to="`/shows/${show.id}`">
-      <IconUnavailable
+      <div
         v-if="!show.image"
-        class="object-cover w-full h-full rounded"
-      />
+        class="flex flex-col items-center justify-center object-cover w-full h-full text-gray-500 bg-black rounded"
+      >
+        <IconUnavailable />
+        <span>No preview available</span>
+      </div>
       <img
         v-else
         :src="show.image.medium"

@@ -8,6 +8,7 @@
         v-for="(show, index) in shows"
         :key="`${show.id}-${index}`"
         :show="show"
+        class="w-32 h-48"
       />
     </ul>
   </section>
