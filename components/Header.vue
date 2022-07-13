@@ -1,13 +1,36 @@
 <template>
-  <header
-    class="w-screen h-16 flex justify-between items-center p-4 backdrop-blur-sm bg-white/30 fixed left-0 top-0 z-30"
+  <nav
+    class="fixed top-0 left-0 z-30 flex items-center justify-between w-screen h-16 p-4 backdrop-blur-sm bg-white/30"
   >
-    <NavbarProfileImage />
+    <div>
+      <transition name="fade" mode="out-in">
+        <NavbarProfileImage v-if="$route.path === '/'" />
+        <nuxt-link to="/" v-else>
+          <IconPrevious />
+        </nuxt-link>
+      </transition>
+    </div>
     <nuxt-link to="/">
       <Logo />
     </nuxt-link>
-    <nuxt-link class="h-6 w-6" to="/search">
-      <IconSearch class="w-full h-full" />
-    </nuxt-link>
-  </header>
+    <div class="w-6 h-6">
+      <transition name="fade" mode="out-in">
+        <nuxt-link to="/search" v-if="$route.path !== '/search'">
+          <IconSearch class="w-full h-full" />
+        </nuxt-link>
+      </transition>
+    </div>
+  </nav>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
