@@ -30,7 +30,10 @@
       </span>
     </div>
     <div class="px-4 mx-auto text-3xl font-bold text-center">
-      <span>{{ rating }}</span> <span class="text-lg text-[red]">/ 10</span>
+      <span v-if="rating"
+        >{{ rating }} <span class="text-lg text-[red]">/ 10</span></span
+      >
+      <span v-else class="text-sm text-gray-500">No rating</span>
     </div>
     <ul class="flex justify-between px-16 py-2">
       <li
