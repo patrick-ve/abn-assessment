@@ -18,6 +18,7 @@
         placeholder="Search TV shows"
         required
         v-model="tvShowQuery"
+        v-autofocus
       />
       <button
         v-if="!tvShowQuery"
@@ -77,6 +78,9 @@ const submitFormHandler = async (query) => {
   try {
     const result = await $fetch(
       `https://api.tvmaze.com/search/shows?q=${query}`
+    );
+    result.forEach((item, index) =>
+      console.log(item.show.image, index, result.length)
     );
     emit('apiCallComplete', result);
     // router.push({
