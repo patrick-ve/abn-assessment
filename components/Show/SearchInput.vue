@@ -1,5 +1,5 @@
 <template>
-  <form class="p-4" @submit.prevent>
+  <form class="p-4 rounded-2xl" @submit.prevent>
     <label
       for="search"
       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -41,7 +41,6 @@ import { useDebouncedRef } from '@/composables/useDebouncedRef';
   Refs
 */
 const tvShowQuery = useDebouncedRef('', 400);
-const shows = ref([]);
 
 /*
   Watchers
@@ -51,32 +50,18 @@ watch(tvShowQuery, async (newQuery) => {
     emit('searchQueryEmptied');
   }
 
-  await submitFormHandler(newQuery);
+  emit('searchQueryProvided', newQuery);
 });
 
 /*
   Emits
 */
-const emit = defineEmits(['apiCallComplete', 'searchQueryEmptied']);
+const emit = defineEmits(['searchQueryProvided', 'searchQueryEmptied']);
 
 /*
   Form handlers
 */
 const emptyFormHandler = () => {
   tvShowQuery.value = '';
-};
-
-const submitFormHandler = async (query) => {
-  const { data, pending, error, refresh } = await useFetch(
-    `https://api.tvmaze.com/search/shows?q=${query}`
-  );
-  console.log(data.value, pending, error);
-  emit('apiCallComplete', data.value);
-  // router.push({
-  //   name: 'shows',
-  //   query: {
-  //     search: tvShowQuery.value,
-  //   },
-  // });
 };
 </script>

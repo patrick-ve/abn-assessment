@@ -1,7 +1,7 @@
 <template>
   <section class="pt-16">
     <ShowSearchInput
-      @apiCallComplete="showSearchResults"
+      @searchQueryProvided="fetchShows"
       @searchQueryEmptied="emptySearchResults"
       v-autofocus
     />
@@ -23,21 +23,30 @@
 </template>
 
 <script setup>
+/*
+  Imports
+*/
 import { ref } from 'vue';
-import ShowSearchInput from '~~/components/Search/ShowSearchInput.vue';
 
+/*
+  Refs
+*/
 const apiCallCompleted = ref(false);
 const showsFetchedFromApi = ref([]);
 
 /*
   Methods
 */
-const showSearchResults = (results) => {
+const fetchShows = async (query) => {
+  const { data: shows } = await useFetch(
+    `https://api.tvmaze.com/search/shows?q=${query}`
+  );
+  showsFetchedFromApi.value = shows.value;
   apiCallCompleted.value = true;
-  showsFetchedFromApi.value = results;
 };
 
 const emptySearchResults = () => {
+  showsFetchedFromApi.value = [];
   apiCallCompleted.value = false;
 };
 </script>
