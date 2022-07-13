@@ -30,11 +30,20 @@
       </span>
     </div>
     <!-- <span>RATING</span> -->
-    <ul>
-      <li v-for="(property, index) in properties" :key="index">
-        {{ property.key }} - {{ property.value }}
+    <ul class="flex justify-between px-16 py-2">
+      <li
+        v-for="(property, index) in properties"
+        :key="index"
+        class="flex flex-col items-center"
+      >
+        <span class="text-xs text-gray-500">{{ property.key }}</span>
+        <span class="text-sm font-semibold">{{ property.value }}</span>
       </li>
     </ul>
+    <div
+      class="p-4 py-2 text-justify text-gray-500"
+      v-html="show.summary"
+    ></div>
   </section>
 </template>
 
