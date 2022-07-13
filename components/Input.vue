@@ -70,13 +70,19 @@ const emptyFormHandler = () => {
 };
 
 const submitFormHandler = async (query) => {
-  const result = await $fetch(`https://api.tvmaze.com/search/shows?q=${query}`);
-  emit('apiCallComplete', result);
-  // router.push({
-  //   name: 'shows',
-  //   query: {
-  //     search: tvShowQuery.value,
-  //   },
-  // });
+  try {
+    const result = await $fetch(
+      `https://api.tvmaze.com/search/shows?q=${query}`
+    );
+    emit('apiCallComplete', result);
+    // router.push({
+    //   name: 'shows',
+    //   query: {
+    //     search: tvShowQuery.value,
+    //   },
+    // });
+  } catch (err) {
+    console.error(err);
+  }
 };
 </script>
