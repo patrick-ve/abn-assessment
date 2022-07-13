@@ -1,5 +1,5 @@
 <template>
-  <section class="w-screen">
+  <section class="relative w-screen">
     <div class="w-full h-[60vh] overflow-hidden shadow-2xl rounded-b-[150px]">
       <img
         class="object-cover w-full h-full"
@@ -7,6 +7,11 @@
         :alt="`Image cover of ${show.name}`"
       />
     </div>
+    <button
+      class="absolute w-24 h-24 top-[50vh] left-[37.5%] text-red-500 bg-white rounded-full shadow-2xl"
+    >
+      <IconPlay />
+    </button>
     <h1>{{ show.name }}</h1>
     <ul>
       <li
