@@ -1,41 +1,53 @@
-import { describe, expect, test, it } from 'vitest';
-import { shallowMount } from '@vue/test-utils';
+import {
+  describe,
+  expect,
+  test,
+  beforeEach,
+  afterEach,
+  afterAll,
+} from 'vitest';
+import { shallowMountComponent } from './test-utils';
 
 import Logo from '@/components/NavBar/Logo.vue';
 
-const mountLogo = (args = {}) =>
-  shallowMount(Logo, {
-    ...args,
-  });
-
 describe('Logo.vue', () => {
-  test('should render an <img> tag', () => {
-    const wrapper = mountLogo();
+  let wrapper;
 
+  beforeEach(() => {
+    wrapper = shallowMountComponent(Logo);
+  });
+
+  test('is a Vue instance', () => {
+    expect(wrapper.vm).toBeTruthy();
+  });
+
+  test('should render an <img /> tag', () => {
     expect(wrapper.find('img').exists()).toBeTruthy();
   });
 
-  test('should render a title with text content "AmroFlix"', () => {
-    const wrapper = mountLogo();
-
-    expect(wrapper.find('h3').text()).toBe('AmroFlix');
+  test('should match default snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 
-  test('should render an <img/> tag', () => {
-    const wrapper = mountLogo();
-
-    wrapper.setProps({ profileImageUrl: 'https://www.abnamro.com/image.jpeg' });
-
-    expect(wrapper.find('img').exists()).toBeTruthy();
+  test('should render an image with a src attribute', () => {
+    expect(wrapper.find('img').attributes()).toHaveProperty('src');
   });
 
-  test('should render an image with correct image props', () => {
-    const wrapper = mountLogo();
+  test('should render an image with an alt attribute', () => {
+    expect(wrapper.find('img').attributes()).toHaveProperty('alt');
+  });
 
-    wrapper.setProps({ profileImageUrl: 'https://www.abnamro.com/image.jpeg' });
-
+  test('should render an image with correct src attribute', () => {
     expect(wrapper.find('img').attributes('src')).toBe(
-      'https://www.abnamro.com/image.jpeg'
+      '/assets/abnflix_logo.png'
     );
+  });
+
+  test('should render an image with correct alt attribute', () => {
+    expect(wrapper.find('img').attributes('alt')).toBe('Logo of ABNFLIX');
+  });
+
+  test('should render an image with 2 attributes', () => {
+    expect(wrapper.find('img').attributes()).toHaveProperty('src');
   });
 });
