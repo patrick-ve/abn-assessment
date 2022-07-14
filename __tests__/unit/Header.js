@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { mount, RouterLinkStub, shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 
 import Header from '../../components/NavBar/Header.vue';
 
@@ -15,10 +15,14 @@ const mountHeader = (args = {}) =>
   });
 
 describe('Header.vue', () => {
-  test('should render an <h3> tag', () => {
+  it('sanity test', () => {
+    expect(true).toBe(true);
+  });
+
+  test('should render an <img> tag', () => {
     const wrapper = mountHeader();
 
-    expect(wrapper.find('h3').exists()).toBeTruthy();
+    expect(wrapper.find('img').exists()).toBeTruthy();
   });
 
   test('should render a title with text content "AmroFlix"', () => {

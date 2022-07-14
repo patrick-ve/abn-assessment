@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "test:unit": "vitest --config ./vitest.config.js"
+    "test:unit": "vitest --config ./vitest.config.ts"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.1.3",
