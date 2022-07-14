@@ -35,7 +35,7 @@
 /*
   Imports
 */
-import { ref, watch, defineEmits } from 'vue';
+import { ref, watch } from 'vue';
 import { useDebouncedRef } from '@/composables/useDebouncedRef';
 
 /*
