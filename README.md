@@ -4,7 +4,9 @@
 
 For this assessment Nuxt 3.0.0rc-4 was used, which is a framework for Vue 3. Out of the box it comes with several handy features, such as Suspense, Composition API inside macro compiler, file-based routing, auto import of components and first-class TypeScript support (although not used here). Nuxt also has a rich set of Nuxt Modules that come in handy in certain use cases.
 
-For this assignment a number of composables were created, each comprising of a function that is reusable across the entire application. Components live inside their own folders and can be auto-imported inside pages, but will be auto transformed based on their respective folder names (i.e.: `@/components/NavBar/Header.vue` becomes `<NavBarHeader />`).
+For this assignment a number of composables were created, each comprising of a function that is reusable across the entire application. No server API middleware was used for this assignment, since it is very unlikely that ABN AMRO will use Nuxt as their API middleware solution in the nearby future. Therefore the API composables only live within pages or components.
+
+Components live inside their own folders and can be auto-imported inside pages, but will be auto transformed based on their respective absolute folder names (i.e.: `@/components/NavBar/Header.vue` becomes `<NavBarHeader />`).
 
 For testing Vitest was used, which required a `vitest.config.ts` file and transforms all auto-imports so that they can be used by Vite and Vitest. Vitest’s approach to the testing space is similar to Vite’s approach on the bundling space: let the tool control your entire environment, top to bottom. Vitest is a replacement for a suite of tools:
 
