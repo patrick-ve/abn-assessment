@@ -36,6 +36,7 @@ describe('SearchInput.vue', () => {
     expect(wrapper.find('input[type="search"]').exists()).toBeTruthy();
   });
 
-  test('should accept a value as input', () =>
-    expect(wrapper.find('input[type="search"]').element.value).toBe(''));
+  test('should accept a value as input', () => {
+    expect(wrapper.find('input[type="search"]').element.value).toBe('');
+  });
 });
