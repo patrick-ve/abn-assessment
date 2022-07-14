@@ -5,9 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "test": "vitest --environment jsdom",
-    "test:unit": "vitest --run --reporter verbose --globals",
-    "test:watch": "vitest --reporter verbose --globals"
+    "test:unit": "vitest --config ./vitest.config.js"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.1.3",
