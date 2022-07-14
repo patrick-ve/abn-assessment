@@ -1,11 +1,4 @@
-import {
-  describe,
-  expect,
-  test,
-  beforeEach,
-  afterEach,
-  afterAll,
-} from 'vitest';
+import { describe, expect, test, beforeEach } from 'vitest';
 import { shallowMountComponent } from './test-utils';
 
 import Logo from '@/components/NavBar/Logo.vue';
